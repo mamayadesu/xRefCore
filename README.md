@@ -5,7 +5,7 @@ This simple framework will simplify a creation of PHP-applicaions with OOP using
 
 <h2>Features:</h2>
 * Class autoloading. Just create a new class and application will load it automatically<br>
-* PHAR support<br>
+* PHAR support. For convertation ZIP to PHAR you can use: https://github.com/mamayadesu/zip2phar<br>
 * Windows CMD and Linux Console encoding support (cyrillic)<br>
 * Startup arguments will be sent on initializing main class<br>
 
@@ -36,5 +36,3 @@ All methods in these classes are static<br>
 <code>ReadLine()</code> reads and returns the input string from the standard input stream<br>
 <code>WriteLine(string $text)</code> writes the string to screen and set pointer to the next line<br>
 <code>Write(string $text)</code> writes the string to screen<br>
-
-For convertation ZIP to PHAR you can use: https://github.com/mamayadesu/zip2phar
