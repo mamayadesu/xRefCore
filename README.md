@@ -36,3 +36,5 @@ All methods in these classes are static<br>
 <code>ReadLine()</code> reads and returns the input string from the standard input stream<br>
 <code>WriteLine(string $text)</code> writes the string to screen and set pointer to the next line<br>
 <code>Write(string $text)</code> writes the string to screen<br>
+
+For convertation ZIP to PHAR you can use: https://github.com/mamayadesu/zip2phar
