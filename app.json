@@ -1,0 +1,11 @@
+{
+    "php_version": "7.0",
+    "app_name": "Application Name",
+    "app_version": "1.0",
+    "app_author": "Author Name",
+    "app_description": "Description for Application",
+    "namespaces":
+    [
+        "Program"
+    ]
+}
