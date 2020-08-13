@@ -17,7 +17,7 @@ This simple framework will simplify a creation of PHP-applicaions with OOP using
 5. Run <code>autoload.php</code><br>
 
 <h2>app.json</h2>
-This file is almost useless. There are two useful things:<br>
+This file is almost useless. However, here are two useful things:<br>
 1. <code>php_version</code>. Set minimal PHP version for app. If your PHP version too old than app's required version, the application won't start<br>
 2. <code>namespaces</code>. If you have a some library and don't want extract to <code>/Program</code>, you can extract it to main dir and add folder name into <code>namespaces</code><br>
 
