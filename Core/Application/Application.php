@@ -32,7 +32,7 @@ class Application
     public static function GetExecutableFileName() : string
     {
         $v1 = \Phar::running(false);
-        $v2 = __FILE__;
+        $v2 = __GET__FILE__();
         $r = (! empty($v1) ? $v1 : $v2);
         return $r;
     }

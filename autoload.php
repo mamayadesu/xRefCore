@@ -42,6 +42,7 @@ function including($path)
 }
 
 $_APP = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "app.json"), true);
+$__FILE__ = __FILE__;
 
 if (version_compare(phpversion(), $_APP["php_version"], '<'))
 {
@@ -56,6 +57,12 @@ function __GET__APP()
 {
     global $_APP;
     return $_APP;
+}
+
+function __GET__FILE__()
+{
+    global $__FILE__;
+    return $__FILE__;
 }
 
 foreach ($namespaces as $ns)
