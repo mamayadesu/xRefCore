@@ -29,7 +29,7 @@ All methods in these classes are static<br>
 <code>GetDescription()</code> returns a description<br>
 <code>GetVersion()</code> returns a version of application<br>
 <code>GetAuthor()</code> I think you really know what it does<br>
-<code>GetExecutableFileName()</code> returns a full path of executable file. If your application packed to PHAR-archive, it will return a full path to PHAR-archive. If not, it will return a full path to file where this method was called<br>
+<code>GetExecutableFileName()</code> returns a full path of executable file. If your application packed to PHAR-archive, it will return a full path to PHAR-archive. If not, it will return a full path to `autoload.php`<br>
 <code>GetExecutableDirectory()</code> returns a path only of executable file. If your application packed to PHAR-archive, it will return a path where PHAR-archive is set. If not, it will return a path to file where this method was called<br>
 <br>
 <b><code>IO\Console</code></b><br>
