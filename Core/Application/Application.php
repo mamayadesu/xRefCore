@@ -41,4 +41,9 @@ class Application
     {
         return dirname(self::GetExecutableFileName()) . DIRECTORY_SEPARATOR;
     }
+    
+    public static function GetFrameworkVersion() : string
+    {
+        return __GET_FRAMEWORK_VERSION();
+    }
 }

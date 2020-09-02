@@ -21,7 +21,7 @@ class Console
     {
         if (strtoupper(substr(PHP_OS, 0, 3)) == "WIN")
         {
-            $text = iconv("UTF-8", "CP866", $text);
+            //$text = iconv("UTF-8", "CP866", $text);
         }
         echo $text;
     }

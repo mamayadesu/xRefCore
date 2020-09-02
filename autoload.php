@@ -2,8 +2,10 @@
 
 error_reporting(E_ALL);
 
+$_ALREADY_REGISTERED = [];
 function including($path)
 {
+    global $_ALREADY_REGISTERED;
     $output = "";
     $data = scandir($path);
     $splitFileName = [];
@@ -27,6 +29,10 @@ function including($path)
             $ext = $splitFileName[count($splitFileName) - 1];
             if (strtolower($ext) == "php")
             {
+                if (in_array($obj1, $_ALREADY_REGISTERED))
+                {
+                    continue;
+                }
                 require_once $obj1;
             }
         }
@@ -52,6 +58,7 @@ if (version_compare(phpversion(), $_APP["php_version"], '<'))
 including(__DIR__ . DIRECTORY_SEPARATOR . "Core");
 
 $namespaces = $_APP["namespaces"];
+$priorities = $_APP["priorities"];
 
 function __GET__APP()
 {
@@ -63,6 +70,20 @@ function __GET__FILE__()
 {
     global $__FILE__;
     return $__FILE__;
+}
+
+function __GET_FRAMEWORK_VERSION()
+{
+    return "1.3";
+}
+
+foreach ($priorities as $class)
+{
+    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
+    $class = $class . ".php";
+    $class = __DIR__ . DIRECTORY_SEPARATOR . $class;
+    require_once $class;
+    $_ALREADY_REGISTERED[] = $class;
 }
 
 foreach ($namespaces as $ns)
