@@ -41,7 +41,7 @@ class Application
     {
         if (\Phar::running(false) == "")
         {
-            return dirname(self::GetExecutableFileName(), 2);
+            return dirname(self::GetExecutableFileName(), 2) . DIRECTORY_SEPARATOR;
         }
         return dirname(self::GetExecutableFileName()) . DIRECTORY_SEPARATOR;
     }
