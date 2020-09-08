@@ -2,6 +2,16 @@
 
 error_reporting(E_ALL);
 
+$phar_file = \Phar::running(false);
+if ($phar_file == "")
+{
+    $file = basename(__FILE__);
+    if ($file != "autoload.php")
+    {
+        die("The name of autoload file must be 'autoload.php'");
+    }
+}
+
 $_ALREADY_REGISTERED = [];
 function including($path)
 {
@@ -74,7 +84,7 @@ function __GET__FILE__()
 
 function __GET_FRAMEWORK_VERSION()
 {
-    return "1.3";
+    return "1.5";
 }
 
 foreach ($priorities as $class)

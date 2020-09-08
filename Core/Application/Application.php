@@ -33,12 +33,16 @@ class Application
     {
         $v1 = \Phar::running(false);
         $v2 = __GET__FILE__();
-        $r = (! empty($v1) ? $v1 : $v2);
+        $r = (!empty($v1) ? $v1 : $v2);
         return $r;
     }
     
     public static function GetExecutableDirectory() : string
     {
+        if (\Phar::running(false) == "")
+        {
+            return dirname(self::GetExecutableFileName(), 2);
+        }
         return dirname(self::GetExecutableFileName()) . DIRECTORY_SEPARATOR;
     }
     
