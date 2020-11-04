@@ -18,11 +18,11 @@ This simple framework will simplify a creation of PHP-applicaions with OOP using
 5. Run <code>autoload.php</code><br>
 
 <h2>app.json</h2>
-This file contains application configuration
+This file contains application configuration<br>
 1. <code>php_version</code> Minimal PHP version required for application<br>
-2. <code>app_name</code> Application name
-3. <code>app_version</code> Version of application
-4. <code>app_author</code> Author of application
-5. <code>app_description</code> Description of application
-6. <code>namespaces</code> List of roots of namespaces. Do not put 'Program' and 'Core' to this list!
-7. <code>priorities</code> Classes which has highest load priority
+2. <code>app_name</code> Application name<br>
+3. <code>app_version</code> Version of application<br>
+4. <code>app_author</code> Author of application<br>
+5. <code>app_description</code> Description of application<br>
+6. <code>namespaces</code> List of roots of namespaces. Do not put 'Program' and 'Core' to this list!<br>
+7. <code>priorities</code> Classes which has highest load priority<br>
