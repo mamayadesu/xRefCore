@@ -1,7 +1,5 @@
 # xRefCore
-Simple OOP framework for OOP coding
-You come from C# or Java and want to create PHP-apps for CLI?
-This simple framework will simplify a creation of PHP-applicaions with OOP using
+This framework will simplify a creation of PHP console applicaions with OOP using
 
 <h2>Features:</h2>
 * Class autoloading. Just create a new class and application will load it automatically<br>
