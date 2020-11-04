@@ -6,11 +6,13 @@ $phar_file = \Phar::running(false);
 if ($phar_file == "")
 {
     $file = basename(__FILE__);
-    if ($file != "autoload.php")
+    if ($file != "autoload_dev.php")
     {
-        die("The name of autoload file must be 'autoload.php'");
+        die("The name of autoload file must be 'autoload_dev.php'");
     }
 }
+
+echo "Initializing...\n";
 
 $_ALREADY_REGISTERED = [];
 function including($path)
@@ -42,6 +44,7 @@ function including($path)
                 {
                     continue;
                 }
+                echo "Registering " . $obj1 . "\n";
                 require_once $obj1;
             }
         }
@@ -56,19 +59,25 @@ function including($path)
     }
 }
 
+echo "Reading app.json\n";
+
 $_APP = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "app.json"), true);
 $__FILE__ = __FILE__;
+var_dump($_APP);
 
+echo "Checking PHP-version\n";
 if (version_compare(phpversion(), $_APP["php_version"], '<'))
 {
     die($_APP["app_name"] . " " . $_APP["app_version"] . " requires at least PHP " . $_APP["php_version"] . ". Your version of PHP is " . phpversion());
 }
 
+echo "Loading core...\n";
 including(__DIR__ . DIRECTORY_SEPARATOR . "Core");
 
 $namespaces = $_APP["namespaces"];
 $priorities = $_APP["priorities"];
 
+echo "Setting title\n";
 \Application\Application::SetTitle($_APP["app_name"]);
 
 function __GET__APP()
@@ -88,15 +97,18 @@ function __GET_FRAMEWORK_VERSION()
     return "1.7.4";
 }
 
+echo "Checking for priorities...\n";
 foreach ($priorities as $class)
 {
     $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
     $class = $class . ".php";
     $class = __DIR__ . DIRECTORY_SEPARATOR . $class;
+    echo "Registering " . $class . "\n";
     require_once $class;
     $_ALREADY_REGISTERED[] = $class;
 }
 
+echo "Loading classes...\n";
 foreach ($namespaces as $ns)
 {
     if ($ns == "Program")
@@ -111,9 +123,13 @@ including(__DIR__ . DIRECTORY_SEPARATOR . "Program");
 
 $args = [];
 
+echo "Reading on-start args...\n";
 if (isset($argv))
 {
     $args = $argv;
 }
 
+var_dump($args);
+
+echo "Starting application...\n";
 new \Program\Main($args);
