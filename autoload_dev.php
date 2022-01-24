@@ -15,9 +15,12 @@ if ($phar_file == "")
 echo "Initializing...\n";
 
 $_ALREADY_REGISTERED = [];
+$_QUEUE = [];
 function including($path)
 {
-    global $_ALREADY_REGISTERED;
+    global $_ALREADY_REGISTERED, $_QUEUE;
+    $regex = "/Class \'(.*?)\' not found/";
+    $regex1 = "/Interface \'(.*?)\' not found/";
     $data = scandir($path);
     $splitFileName = [];
     $ext = "";
@@ -45,7 +48,72 @@ function including($path)
                     continue;
                 }
                 echo "Registering " . $obj1 . "\n";
-                require_once $obj1;
+                try
+                {
+                    require_once $obj1;
+                }
+                catch (\Throwable $e)
+                {
+                    $msg = $e->getMessage();
+                    if (preg_match($regex, $msg))
+                    {
+                        $missingClass = "\\" . preg_replace($regex, "$1", $msg);
+                    }
+                    else if (preg_match($regex1, $msg))
+                    {
+                        $missingClass = "\\" . preg_replace($regex1, "$1", $msg);
+                    }
+                    else
+                    {
+                        die($e->getMessage());
+                    }
+                    if (!isset($_QUEUE[$missingClass]))
+                    {
+                        $_QUEUE[$missingClass] = [];
+                    }
+                    echo "Package " . $obj1 . " is missing '" . $missingClass . "'. Waiting when this class will be loaded...\n";
+                    $_QUEUE[$missingClass][$obj1] = $obj1;
+                }
+                if (count($_QUEUE) > 0)
+                {
+                    foreach ($_QUEUE as $notLoadedClass => $value)
+                    {
+                        if (class_exists($notLoadedClass))
+                        {
+                            foreach ($_QUEUE[$notLoadedClass] as $queueFileName => $value)
+                            {
+                                unset($_QUEUE[$notLoadedClass][$queueFileName]);
+                                echo "'" . $notLoadedClass . "' was loaded! Trying to register " . $queueFileName . "\n";
+                                try
+                                {
+                                    require_once $queueFileName;
+                                }
+                                catch (\Throwable $e)
+                                {
+                                    $msg = $e->getMessage();
+                                    if (preg_match($regex, $msg))
+                                    {
+                                        $missingClass1 = "\\" . preg_replace($regex, "$1", $msg);
+                                    }
+                                    else if (preg_match($regex1, $msg))
+                                    {
+                                        $missingClass1 = "\\" . preg_replace($regex1, "$1", $msg);
+                                    }
+                                    else
+                                    {
+                                        die($e->getMessage());
+                                    }
+                                    if (!isset($_QUEUE[$missingClass1]))
+                                    {
+                                        $_QUEUE[$missingClass1] = [];
+                                    }
+                                    echo "And now package " . $obj1 . " is missing '" . $missingClass . "'. Okay... waiting when this class will be loaded...\n";
+                                    $_QUEUE[$missingClass1][$obj1] = $obj1;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         else
@@ -57,6 +125,19 @@ function including($path)
     {
         including($obj1);
     }
+}
+
+if (count($_QUEUE) > 0)
+{
+    echo "Next packages could not be loaded:\n";
+    foreach ($_QUEUE as $notLoadedClass)
+    {
+        foreach ($_QUEUE[$notLoadedClass] as $notLoadedPackage)
+        {
+            echo $notLoadedPackage . " is missing " . $notLoadedClass;
+        }
+    }
+    die(255);
 }
 
 echo "Reading app.json\n";
@@ -75,7 +156,6 @@ echo "Loading core...\n";
 including(__DIR__ . DIRECTORY_SEPARATOR . "Core");
 
 $namespaces = $_APP["namespaces"];
-$priorities = $_APP["priorities"];
 
 echo "Setting title\n";
 \Application\Application::SetTitle($_APP["app_name"]);
@@ -94,18 +174,7 @@ function __GET__FILE__()
 
 function __GET_FRAMEWORK_VERSION()
 {
-    return "1.7.4.3";
-}
-
-echo "Checking for priorities...\n";
-foreach ($priorities as $class)
-{
-    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
-    $class = $class . ".php";
-    $class = __DIR__ . DIRECTORY_SEPARATOR . $class;
-    echo "Registering " . $class . "\n";
-    require_once $class;
-    $_ALREADY_REGISTERED[] = $class;
+    return "1.8.0.0";
 }
 
 echo "Loading classes...\n";

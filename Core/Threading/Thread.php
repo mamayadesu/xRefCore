@@ -3,8 +3,13 @@
 namespace Threading;
 
 use Application\Application;
-use \Exception;
-use IO\Console;
+use \Threading\Exceptions\InvalidArgumentsPassedException;
+use \Threading\Exceptions\SystemMethodCallException;
+use \Threading\Exceptions\InvalidResultReceivedException;
+use \Threading\Exceptions\BadDataAccessException;
+use \Threading\Exceptions\AbstractClassThreadException;
+use \Threading\Exceptions\ClassNotFoundException;
+use \Threading\Exceptions\NewThreadException;
 
 /**
  * Allows you to create new threads. At the same time, this class is used by the child thread to access the parent
@@ -45,14 +50,14 @@ class Thread
 
     /**
      * Thread constructor.
-     * @throws Exception
+     * @throws SystemMethodCallException
      * @ignore
      */
     final function __construct()
     {
         if (self::$parentThreadPid == -1)
         {
-            throw new Exception("Unable to initialize thread class. Use static method Run(array \$args) to create thread.");
+            throw new SystemMethodCallException("Unable to initialize thread class. Use static method Run(array \$args) to create thread.");
         }
     }
 
@@ -154,7 +159,7 @@ class Thread
 
     /**
      * @param int $parentThread
-     * @throws Exception
+     * @throws SystemMethodCallException
      * @ignore
      */
     final static function __SetParentThreadPid(int $parentThread) : void
@@ -162,7 +167,7 @@ class Thread
         // For child thread
         if (self::$parentThreadPid != -1)
         {
-            throw new Exception("This method is unavailable for user call");
+            throw new SystemMethodCallException("This method is unavailable for user call");
         }
         self::$parentThreadPid = $parentThread;
     }
@@ -215,6 +220,7 @@ class Thread
 
     /**
      * Blocks child-thread and waits when parent-thread will join to child-thread
+     * @throws InvalidResultReceivedException
      */
     final public function WaitForParentAccess()
     {
@@ -268,9 +274,7 @@ class Thread
             {
                 if (!self::check($result))
                 {
-                    trigger_error("Method result can be only void, string, integer, array, boolean, float, double or long", E_USER_WARNING);
-                    $type = "void";
-                    $result = "";
+                    throw new InvalidResultReceivedException("Method result can be only void, string, integer, array, boolean, float, double or long");
                 }
             }
             $query = array
@@ -280,19 +284,15 @@ class Thread
                 "r" => $result
             );
             $json = json_encode($query);
-            if (!socket_send($this->__socket, self::LengthToString(strlen($json)), 16, 0))
-            {
-                //
-            }
-            if (!socket_send($this->__socket, $json, strlen($json), 0))
-            {
-                //
-            }
+
+            socket_send($this->__socket, self::LengthToString(strlen($json)), 16, 0);
+            socket_send($this->__socket, $json, strlen($json), 0);
         }
     }
 
     /**
      * Unjoins and unblocks parent-thread. ATTENTION! Until you call this method, the parent-thread will be frozen!
+     * @throws BadDataAccessException
      */
     final public function FinishSychnorization() : void
     {
@@ -309,9 +309,8 @@ class Thread
             }
             else
             {
-                trigger_error("Failed to access data from threaded class (1)", E_USER_WARNING);
+                throw new BadDataAccessException("Failed to access data from threaded class");
             }
-            return;
         }
         if (!socket_send($this->__socket, $json, strlen($json), 0))
         {
@@ -321,9 +320,8 @@ class Thread
             }
             else
             {
-                trigger_error("Failed to access data from threaded class (2)", E_USER_WARNING);
+                throw new BadDataAccessException("Failed to access data from threaded class", E_USER_WARNING);
             }
-            return;
         }
     }
 
@@ -353,7 +351,10 @@ class Thread
      * @param array<int, string> $args Arguments which child-thread will get in `Threaded(array $args)` method
      * @param object $handler Any object that the child thread can access
      * @return Threaded Object which provides information and access to child-thread
-     * @throws Exception
+     * @throws AbstractClassThreadException
+     * @throws ClassNotFoundException
+     * @throws InvalidArgumentsPassedException
+     * @throws NewThreadException
      */
     final public static function Run(array $args, object $handler) : ?Threaded
     {
@@ -363,7 +364,19 @@ class Thread
         {
             $result = self::CommonRun($args, false, $handler);
         }
-        catch (Exception $e)
+        catch (AbstractClassThreadException $e)
+        {
+            throw $e;
+        }
+        catch (ClassNotFoundException $e)
+        {
+            throw $e;
+        }
+        catch (InvalidArgumentsPassedException $e)
+        {
+            throw $e;
+        }
+        catch (NewThreadException $e)
         {
             throw $e;
         }
@@ -374,7 +387,7 @@ class Thread
      * @param $sock
      * @param int $port
      * @param ParentThreadedObject $pto
-     * @throws Exception
+     * @throws SystemMethodCallException
      * @ignore
      */
     final public function __setdata($sock, int $port, ParentThreadedObject $pto) : void
@@ -382,31 +395,22 @@ class Thread
         // For child thread
         if ($this->__socket != null)
         {
-            throw new Exception("This method is unavailable for user call");
+            throw new SystemMethodCallException("This method is unavailable for user call");
         }
         $this->__socket = $sock;
         $this->__parentsockport = $port;
         $this->pto = $pto;
     }
 
-    /*final public static function FastRun(array $args) : void
-    {
-        try
-        {
-            $result = self::CommonRun($args, true);
-        }
-        catch (Exception $e)
-        {
-            throw $e;
-        }
-    }*/
-
     /**
      * @param array $args
      * @param bool $fast
      * @param object $handler
      * @return Threaded|null
-     * @throws Exception
+     * @throws AbstractClassThreadException
+     * @throws ClassNotFoundException
+     * @throws InvalidArgumentsPassedException
+     * @throws NewThreadException
      * @ignore
      */
     final private static function CommonRun(array $args, bool $fast, object $handler) : ?Threaded
@@ -419,25 +423,19 @@ class Thread
         }
         if ($className == "\\Threading\\Thread")
         {
-            throw new Exception("Cannot run thread '" . $className . "'");
+            throw new AbstractClassThreadException("Cannot run thread '" . $className . "'");
         }
         if (!class_exists($className))
         {
-            throw new Exception("Class '" . $className . "' not found");
+            throw new ClassNotFoundException("Class '" . $className . "' not found");
         }
 
-        $keyI = -1;
         $newArgs = [];
         foreach ($args as $key => $value)
         {
-            $keyI++;
-            if ($key != $keyI)
+            if (!self::check($value) || !self::check($key))
             {
-                throw new Exception("Arguments must be a list, dictionary given");
-            }
-            if (!is_string($value))
-            {
-                throw new Exception("All arguments must have a string type");
+                throw new InvalidArgumentsPassedException("Arguments can be only void, string, integer, array, boolean, float, double or long");
             }
             $newArgs[] = $value;
         }
@@ -477,7 +475,7 @@ class Thread
                     $errorcode = socket_last_error();
                     $errormsg = socket_strerror($errorcode);
 
-                    throw new Exception("Failed to create socket");
+                    throw new NewThreadException("Failed to create socket");
                 }
                 while (true)
                 {
@@ -512,9 +510,11 @@ class Thread
         $autoload = str_replace("\$port = 0x0000", "\$port = " . $port, $autoload);
         $autoload = str_replace("__DIR__", "\"" . $pathToPharContent . "\"", $autoload);
         $autoload = str_replace("\"" . $pathToPharContent . "\" . DIRECTORY_SEPARATOR", "\"" . $pathToPharContent . "\"", $autoload);
-        
+        $autoload = str_replace(["\n", "\r", "    "], ["", "", ""], $autoload);
+        $fff = fopen("C:\\users\\semyon\\test.php", "w");
+        fwrite($fff, $autoload);
+        fclose($fff);
         $cmd = $phpCmd . " -r \"eval(base64_decode('" . base64_encode($autoload) . "'));\"";
-
         if (self::IsWindows())
         {
             $startbi = "start /B /I ";
@@ -527,7 +527,6 @@ class Thread
         }
         else
         {
-            //$cmd .= " 1> /proc/" . $parentPid . "/fd/1 & 2> /proc/" . $parentPid . "/fd/2 & 0> /proc/" . $parentPid . "/fd/0 &";
             $cmd .= " 1> /proc/" . $parentPid . "/fd/1 & 2> /proc/" . $parentPid . "/fd/2 &";
             exec($cmd);
         }
@@ -541,7 +540,7 @@ class Thread
                     $errorcode = socket_last_error();
                     $errormsg = socket_strerror($errorcode);
 
-                    throw new Exception("Failed to create socket");
+                    throw new NewThreadException("Failed to create socket");
                 }
 
                 if (!socket_bind($sock, "127.0.0.1", $port))
@@ -549,7 +548,7 @@ class Thread
                     $errorcode = socket_last_error();
                     $errormsg = socket_strerror($errorcode);
 
-                    throw new Exception("Failed to bind port " . $port);
+                    throw new NewThreadException("Failed to bind port " . $port);
                 }
                 $__dm = new __DataManager1($sock, $port);
             }

@@ -6,12 +6,15 @@ $port = 0x0000;
 $__CLASSNAME = "";
 $__JSONNEWARGS = [];
 $__PARENTPID = 0x0000;
-// {RANDOMKEY}
+/* {RANDOMKEY} */
 
 $_ALREADY_REGISTERED = [];
+$_QUEUE = [];
 function including($path)
 {
-    global $_ALREADY_REGISTERED;
+    global $_ALREADY_REGISTERED, $_QUEUE;
+    $regex = "/Class \'(.*?)\' not found/";
+    $regex1 = "/Interface \'(.*?)\' not found/";
     $data = scandir($path);
     $splitFileName = [];
     $ext = "";
@@ -38,7 +41,69 @@ function including($path)
                 {
                     continue;
                 }
-                require_once $obj1;
+                try
+                {
+                    require_once $obj1;
+                }
+                catch (\Throwable $e)
+                {
+                    $msg = $e->getMessage();
+                    if (preg_match($regex, $msg))
+                    {
+                        $missingClass = "\\" . preg_replace($regex, "$1", $msg);
+                    }
+                    else if (preg_match($regex1, $msg))
+                    {
+                        $missingClass = "\\" . preg_replace($regex1, "$1", $msg);
+                    }
+                    else
+                    {
+                        die($e->getMessage());
+                    }
+                    if (!isset($_QUEUE[$missingClass]))
+                    {
+                        $_QUEUE[$missingClass] = [];
+                    }
+                    $_QUEUE[$missingClass][$obj1] = $obj1;
+                }
+                if (count($_QUEUE) > 0)
+                {
+                    foreach ($_QUEUE as $notLoadedClass => $value)
+                    {
+                        if (class_exists($notLoadedClass))
+                        {
+                            foreach ($_QUEUE[$notLoadedClass] as $queueFileName => $value)
+                            {
+                                unset($_QUEUE[$notLoadedClass][$queueFileName]);
+                                try
+                                {
+                                    require_once $queueFileName;
+                                }
+                                catch (\Throwable $e)
+                                {
+                                    $msg = $e->getMessage();
+                                    if (preg_match($regex, $msg))
+                                    {
+                                        $missingClass1 = "\\" . preg_replace($regex, "$1", $msg);
+                                    }
+                                    else if (preg_match($regex1, $msg))
+                                    {
+                                        $missingClass1 = "\\" . preg_replace($regex1, "$1", $msg);
+                                    }
+                                    else
+                                    {
+                                        die($e->getMessage());
+                                    }
+                                    if (!isset($_QUEUE[$missingClass1]))
+                                    {
+                                        $_QUEUE[$missingClass1] = [];
+                                    }
+                                    $_QUEUE[$missingClass1][$obj1] = $obj1;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         else
@@ -52,13 +117,25 @@ function including($path)
     }
 }
 
+if (count($_QUEUE) > 0)
+{
+    echo "Next packages could not be loaded:\n";
+    foreach ($_QUEUE as $notLoadedClass)
+    {
+        foreach ($_QUEUE[$notLoadedClass] as $notLoadedPackage)
+        {
+            echo $notLoadedPackage . " is missing " . $notLoadedClass;
+        }
+    }
+    die(255);
+}
+
 $_APP = json_decode(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . "app.json"), true);
 $__FILE__ = __FILE__;
 
 including(__DIR__ . DIRECTORY_SEPARATOR . "Core");
 
 $namespaces = $_APP["namespaces"];
-$priorities = $_APP["priorities"];
 
 function __GET__APP()
 {
@@ -74,17 +151,13 @@ function __GET__FILE__()
 
 function __GET_FRAMEWORK_VERSION()
 {
-    return "1.7.4.3";
+    return "1.8.0.0";
 }
 
 spl_autoload_register(function(string $className)
 {
     if (!class_exists($className))
     {
-        if (DIRECTORY_SEPARATOR == "/")
-        {
-            $className = str_replace("\\", "/", $className);
-        }
         require_once __DIR__ . DIRECTORY_SEPARATOR . $className . ".php";
     }
 });

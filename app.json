@@ -6,10 +6,6 @@
     "app_description": "Description for Application",
     "namespaces":
     [
-        
-    ],
-    "priorities":
-    [
-        
+        "Program"
     ]
 }

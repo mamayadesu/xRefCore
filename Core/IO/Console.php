@@ -48,12 +48,20 @@ class Console
     }
 
     /**
-     * Clears a whole line
+     * Clears a line
      *
      * @param string $text Replace whole text on current line to new text
      */
     public static function ClearLine(string $text = "") : void
     {
         self::Write("\r" . $text);
+    }
+
+    /**
+     * Clears all output on window
+     */
+    public static function ClearWindow() : void
+    {
+        echo chr(27) . chr(91) . 'H' . chr(27) . chr(91) . 'J';
     }
 }
