@@ -4,9 +4,10 @@ This framework will simplify a creation of PHP console applicaions with OOP usin
 <h2>Features:</h2>
 * Class autoloading. Just create a new class and application will load it automatically<br>
 * PHAR support. For convertation ZIP to PHAR you can use: https://github.com/mamayadesu/zip2phar<br>
+* To simplify the packaging of the application, use https://github.com/mamayadesu/xRefCoreCompiler<br>
 * Windows CMD and Linux Console encoding support (cyrillic)<br>
 * Startup arguments will be sent on initializing main class<br>
-* Emulation of multithreading. Only `socket` extesion required
+* Emulation of multithreading. `socket` extension is required
 
 <h2>How to use</h2>
 1. Download<br>
@@ -23,4 +24,3 @@ This file contains application configuration<br>
 4. <code>app_author</code> Author of application<br>
 5. <code>app_description</code> Description of application<br>
 6. <code>namespaces</code> List of roots of namespaces. Do not put 'Program' and 'Core' to this list!<br>
-7. <code>priorities</code> Classes which has highest load priority<br>
