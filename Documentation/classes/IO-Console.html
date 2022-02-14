@@ -65,6 +65,10 @@
                                             <li><a href="namespaces/data-exceptions.html"><abbr title="\Data\Exceptions">Exceptions</abbr></a></li>
                                             <li><a href="namespaces/data-string.html"><abbr title="\Data\String">String</abbr></a></li>
                                     </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/httpserver.html"><abbr title="\HttpServer">HttpServer</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="namespaces/httpserver-exceptions.html"><abbr title="\HttpServer\Exceptions">Exceptions</abbr></a></li>
+                                    </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/io.html"><abbr title="\IO">IO</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                     </ul>
@@ -86,6 +90,7 @@
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Data.html"><abbr title="\Data">Data</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="packages/Data-Exceptions.html"><abbr title="\Data\Exceptions">Exceptions</abbr></a></li>
+                                    <li><a href="packages/Data-String.html"><abbr title="\Data\String">String</abbr></a></li>
                             </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/BackgroundColors.html"><abbr title="\BackgroundColors">BackgroundColors</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/ColoredString.html"><abbr title="\ColoredString">ColoredString</abbr></a></h3>
@@ -94,6 +99,10 @@
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Threading.html"><abbr title="\Threading">Threading</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="packages/Threading-Exceptions.html"><abbr title="\Threading\Exceptions">Exceptions</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/HttpServer.html"><abbr title="\HttpServer">HttpServer</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/HttpServer-Exceptions.html"><abbr title="\HttpServer\Exceptions">Exceptions</abbr></a></li>
                             </ul>
                         </section>
     
@@ -133,7 +142,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
             <p class="phpdocumentor-summary">Console tools</p>
@@ -168,11 +177,18 @@
 <dd>Clears all output in window</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/IO-Console.html#method_ReadKey">ReadKey()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Reads pressed key in input stream</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IO-Console.html#method_ReadLine">ReadLine()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Reads line from default stream input. Attention! In child-threads this method works only in Windows but doesn&#039;t work in *Unix systems</dd>
+<dd>Reads line from default input stream. Attention! In child-threads this method works only in Windows but doesn&#039;t work in *Unix systems</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IO-Console.html#method_Write">Write()</a>
@@ -214,7 +230,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clears a line</p>
@@ -260,7 +276,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">223</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clears all output in window</p>
@@ -287,6 +303,40 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_ReadKey">
+        ReadKey()
+        <a href="classes/IO-Console.html#method_ReadKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">39</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Reads pressed key in input stream</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">ReadKey</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_ReadLine">
         ReadLine()
         <a href="classes/IO-Console.html#method_ReadLine" class="headerlink"><i class="fas fa-link"></i></a>
@@ -294,10 +344,10 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Reads line from default stream input. Attention! In child-threads this method works only in Windows but doesn&#039;t work in *Unix systems</p>
+        <p class="phpdocumentor-summary">Reads line from default input stream. Attention! In child-threads this method works only in Windows but doesn&#039;t work in *Unix systems</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -329,14 +379,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 </aside>
 
         <p class="phpdocumentor-summary">Writes text to default stream output</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">Write</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">Write</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$foregroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$backgroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -349,6 +399,22 @@
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Input text</p>
 </section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$foregroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$backgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>
@@ -375,14 +441,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/Console.php"><a href="files/io-console.html"><abbr title="IO/Console.php">Console.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 </aside>
 
         <p class="phpdocumentor-summary">Writes text to default stream output and sets pointer to new line</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">WriteLine</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">WriteLine</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$foregroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$backgroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -395,6 +461,22 @@
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Input text</p>
 </section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$foregroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$backgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>

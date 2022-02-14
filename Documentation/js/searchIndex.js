@@ -283,13 +283,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003ASetClearWindowOnRender\u0028\u0029",
             "name": "SetClearWindowOnRender",
-            "summary": "Menu\u0020will\u0020be\u0020cleared\u0020after\u0020every\u0020render",
+            "summary": "Menu\u0020will\u0020be\u0020cleared\u0020after\u0020every\u0020render.\u0020Always\u0020TRUE\u0020if\u0020type\u0020of\u0020MenuBox\u0020is\u0020KeyPressType",
             "url": "classes/CliForms-MenuBox-MenuBox.html#method_SetClearWindowOnRender"
         },                {
             "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003AGetThis\u0028\u0029",
             "name": "GetThis",
             "summary": "Returns\u0020your\u0020object\u0020which\u0020you\u0020passed\u0020in\u0020constructor",
             "url": "classes/CliForms-MenuBox-MenuBox.html#method_GetThis"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003AResultOutput\u0028\u0029",
+            "name": "ResultOutput",
+            "summary": "Prints\u0020callback\u0020output\u0020of\u0020selected\u0020and\u0020called\u0020MenuBoxItem.\u0020It\u0027s\u0020recommended\u0020to\u0020use\u0020instead\u0020of\u0020Console\u003A\u003AWrite,\u0020because\u0020this\u0020method\u0020saves\u0020output\u0020after\u0020selecting\u0020another\u0020item.",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#method_ResultOutput"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003AResultOutputLine\u0028\u0029",
+            "name": "ResultOutputLine",
+            "summary": "Prints\u0020callback\u0020output\u0020of\u0020selected\u0020and\u0020called\u0020MenuBoxItem\u0020and\u0020moves\u0020caret\u0020to\u0020new\u0020line.\u0020It\u0027s\u0020recommended\u0020to\u0020use\u0020instead\u0020of\u0020Console\u003A\u003AWriteLine,\u0020because\u0020this\u0020method\u0020saves\u0020output\u0020after\u0020selecting\u0020another\u0020item.",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#method_ResultOutputLine"
         },                {
             "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003ASetInputTitle\u0028\u0029",
             "name": "SetInputTitle",
@@ -326,10 +336,10 @@ Search.appendIndex(
             "summary": "Sets\u0020style\u0020for\u0020a\u0020non\u002Dexists\u0020item\u0020title",
             "url": "classes/CliForms-MenuBox-MenuBox.html#method_SetWrongItemTitleStyle"
         },                {
-            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A_renderBody\u0028\u0029",
-            "name": "_renderBody",
-            "summary": "",
-            "url": "classes/CliForms-MenuBox-MenuBox.html#method__renderBody"
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003ASetSelectedItemStyle\u0028\u0029",
+            "name": "SetSelectedItemStyle",
+            "summary": "Sets\u0020style\u0020for\u0020selected\u0020item",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#method_SetSelectedItemStyle"
         },                {
             "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003ARender\u0028\u0029",
             "name": "Render",
@@ -376,6 +386,21 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CliForms-MenuBox-MenuBox.html#property_wrongItemTitleForegroundColor"
         },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024selectedItemHeaderForegroundColor",
+            "name": "selectedItemHeaderForegroundColor",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#property_selectedItemHeaderForegroundColor"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024selectedItemDelimiterForegroundColor",
+            "name": "selectedItemDelimiterForegroundColor",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#property_selectedItemDelimiterForegroundColor"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024selectedItemRowForegroundColor",
+            "name": "selectedItemRowForegroundColor",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#property_selectedItemRowForegroundColor"
+        },                {
             "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024titleBackgroundColor",
             "name": "titleBackgroundColor",
             "summary": "",
@@ -410,6 +435,21 @@ Search.appendIndex(
             "name": "wrongItemTitleBackgroundColor",
             "summary": "",
             "url": "classes/CliForms-MenuBox-MenuBox.html#property_wrongItemTitleBackgroundColor"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024selectedItemHeaderBackgroundColor",
+            "name": "selectedItemHeaderBackgroundColor",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#property_selectedItemHeaderBackgroundColor"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024selectedItemDelimiterBackgroundColor",
+            "name": "selectedItemDelimiterBackgroundColor",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#property_selectedItemDelimiterBackgroundColor"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024selectedItemRowBackgroundColor",
+            "name": "selectedItemRowBackgroundColor",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBox.html#property_selectedItemRowBackgroundColor"
         },                {
             "fqsen": "\\CliForms\\MenuBox\\MenuBox\u003A\u003A\u0024items",
             "name": "items",
@@ -488,7 +528,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Data\\Enum\u003A\u003AHasItem\u0028\u0029",
             "name": "HasItem",
-            "summary": "",
+            "summary": "Returns\u0020TRUE\u0020if\u0020Enum\u0020contains\u0020specified\u0020item",
             "url": "classes/Data-Enum.html#method_HasItem"
         },                {
             "fqsen": "\\Data\\Exceptions\\CreateEnumInstanceException",
@@ -653,8 +693,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\IO\\Console\u003A\u003AReadLine\u0028\u0029",
             "name": "ReadLine",
-            "summary": "Reads\u0020line\u0020from\u0020default\u0020stream\u0020input.\u0020Attention\u0021\u0020In\u0020child\u002Dthreads\u0020this\u0020method\u0020works\u0020only\u0020in\u0020Windows\u0020but\u0020doesn\u0027t\u0020work\u0020in\u0020\u002AUnix\u0020systems",
+            "summary": "Reads\u0020line\u0020from\u0020default\u0020input\u0020stream.\u0020Attention\u0021\u0020In\u0020child\u002Dthreads\u0020this\u0020method\u0020works\u0020only\u0020in\u0020Windows\u0020but\u0020doesn\u0027t\u0020work\u0020in\u0020\u002AUnix\u0020systems",
             "url": "classes/IO-Console.html#method_ReadLine"
+        },                {
+            "fqsen": "\\IO\\Console\u003A\u003AReadKey\u0028\u0029",
+            "name": "ReadKey",
+            "summary": "Reads\u0020pressed\u0020key\u0020in\u0020input\u0020stream",
+            "url": "classes/IO-Console.html#method_ReadKey"
         },                {
             "fqsen": "\\IO\\Console\u003A\u003AWriteLine\u0028\u0029",
             "name": "WriteLine",
@@ -981,6 +1026,241 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Threading-Exceptions-SuperGlobalArray-InvalidValueTypeException.html#property_GivenType"
         },                {
+            "fqsen": "\\CliForms\\Exceptions\\InvalidMenuBoxTypeException",
+            "name": "InvalidMenuBoxTypeException",
+            "summary": "",
+            "url": "classes/CliForms-Exceptions-InvalidMenuBoxTypeException.html"
+        },                {
+            "fqsen": "\\CliForms\\Exceptions\\NoItemsAddedException",
+            "name": "NoItemsAddedException",
+            "summary": "Class\u0020NoItemsAddedException",
+            "url": "classes/CliForms-Exceptions-NoItemsAddedException.html"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBoxTypes",
+            "name": "MenuBoxTypes",
+            "summary": "Creating\u0020Enum\u0020objects",
+            "url": "classes/CliForms-MenuBox-MenuBoxTypes.html"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBoxTypes\u003A\u003AInputItemNumberType",
+            "name": "InputItemNumberType",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBoxTypes.html#constant_InputItemNumberType"
+        },                {
+            "fqsen": "\\CliForms\\MenuBox\\MenuBoxTypes\u003A\u003AKeyPressType",
+            "name": "KeyPressType",
+            "summary": "",
+            "url": "classes/CliForms-MenuBox-MenuBoxTypes.html#constant_KeyPressType"
+        },                {
+            "fqsen": "\\Data\\String\\Bg",
+            "name": "Bg",
+            "summary": "Short\u0020aliases\u0020for\u0020BackgroundColors",
+            "url": "classes/Data-String-Bg.html"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Aa",
+            "name": "a",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_a"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Ab",
+            "name": "b",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_b"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Ar",
+            "name": "r",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_r"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Agr",
+            "name": "gr",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_gr"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Ay",
+            "name": "y",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_y"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Abl",
+            "name": "bl",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_bl"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Am",
+            "name": "m",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_m"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Ac",
+            "name": "c",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_c"
+        },                {
+            "fqsen": "\\Data\\String\\Bg\u003A\u003Alg",
+            "name": "lg",
+            "summary": "",
+            "url": "classes/Data-String-Bg.html#constant_lg"
+        },                {
+            "fqsen": "\\Data\\String\\Fg",
+            "name": "Fg",
+            "summary": "Short\u0020aliases\u0020for\u0020ForegroundColors",
+            "url": "classes/Data-String-Fg.html"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Aa",
+            "name": "a",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_a"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Ab",
+            "name": "b",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_b"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Adg",
+            "name": "dg",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_dg"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Adb",
+            "name": "db",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_db"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Abl",
+            "name": "bl",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_bl"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Adgn",
+            "name": "dgn",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_dgn"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Agn",
+            "name": "gn",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_gn"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Adc",
+            "name": "dc",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_dc"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Ac",
+            "name": "c",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_c"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Adr",
+            "name": "dr",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_dr"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Adp",
+            "name": "dp",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_dp"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Ap",
+            "name": "p",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_p"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Abr",
+            "name": "br",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_br"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Ay",
+            "name": "y",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_y"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Ag",
+            "name": "g",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_g"
+        },                {
+            "fqsen": "\\Data\\String\\Fg\u003A\u003Aw",
+            "name": "w",
+            "summary": "",
+            "url": "classes/Data-String-Fg.html#constant_w"
+        },                {
+            "fqsen": "\\HttpServer\\Exceptions\\ServerStartException",
+            "name": "ServerStartException",
+            "summary": "Class\u0020ServerStartException",
+            "url": "classes/HttpServer-Exceptions-ServerStartException.html"
+        },                {
+            "fqsen": "\\HttpServer\\Request",
+            "name": "Request",
+            "summary": "Contains\u0020request\u0020data",
+            "url": "classes/HttpServer-Request.html"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003AGetRawContent\u0028\u0029",
+            "name": "GetRawContent",
+            "summary": "Returns\u0020body\u0020of\u0020request",
+            "url": "classes/HttpServer-Request.html#method_GetRawContent"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024Server",
+            "name": "Server",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_Server"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RequestError",
+            "name": "RequestError",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_RequestError"
+        },                {
+            "fqsen": "\\HttpServer\\Response",
+            "name": "Response",
+            "summary": "Package\u0020contains\u0020method\u0020for\u0020response\u0020build",
+            "url": "classes/HttpServer-Response.html"
+        },                {
+            "fqsen": "\\HttpServer\\Response\u003A\u003AHeader\u0028\u0029",
+            "name": "Header",
+            "summary": "Adds\u0020header\u0020for\u0020response",
+            "url": "classes/HttpServer-Response.html#method_Header"
+        },                {
+            "fqsen": "\\HttpServer\\Response\u003A\u003AStatus\u0028\u0029",
+            "name": "Status",
+            "summary": "Sets\u0020HTTP\u002Dstatus",
+            "url": "classes/HttpServer-Response.html#method_Status"
+        },                {
+            "fqsen": "\\HttpServer\\Response\u003A\u003AIsClosed\u0028\u0029",
+            "name": "IsClosed",
+            "summary": "Returns\u0020TRUE\u0020if\u0020connection\u0020closed",
+            "url": "classes/HttpServer-Response.html#method_IsClosed"
+        },                {
+            "fqsen": "\\HttpServer\\Response\u003A\u003AEnd\u0028\u0029",
+            "name": "End",
+            "summary": "Sets\u0020response\u0020for\u0020client\u0020and\u0020closes\u0020connection",
+            "url": "classes/HttpServer-Response.html#method_End"
+        },                {
+            "fqsen": "\\HttpServer\\Server",
+            "name": "Server",
+            "summary": "HTTP\u002Dserver",
+            "url": "classes/HttpServer-Server.html"
+        },                {
+            "fqsen": "\\HttpServer\\Server\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Server\u0020constructor.",
+            "url": "classes/HttpServer-Server.html#method___construct"
+        },                {
+            "fqsen": "\\HttpServer\\Server\u003A\u003AOn\u0028\u0029",
+            "name": "On",
+            "summary": "Add\u0020new\u0020event",
+            "url": "classes/HttpServer-Server.html#method_On"
+        },                {
+            "fqsen": "\\HttpServer\\Server\u003A\u003AStart\u0028\u0029",
+            "name": "Start",
+            "summary": "Run\u0020server",
+            "url": "classes/HttpServer-Server.html#method_Start"
+        },                {
+            "fqsen": "\\HttpServer\\Server\u003A\u003AShutdown\u0028\u0029",
+            "name": "Shutdown",
+            "summary": "Shutdown\u0020server",
+            "url": "classes/HttpServer-Server.html#method_Shutdown"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -1025,6 +1305,16 @@ Search.appendIndex(
             "name": "String",
             "summary": "",
             "url": "namespaces/data-string.html"
+        },                {
+            "fqsen": "\\HttpServer\\Exceptions",
+            "name": "Exceptions",
+            "summary": "",
+            "url": "namespaces/httpserver-exceptions.html"
+        },                {
+            "fqsen": "\\HttpServer",
+            "name": "HttpServer",
+            "summary": "",
+            "url": "namespaces/httpserver.html"
         },                {
             "fqsen": "\\IO",
             "name": "IO",

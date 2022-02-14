@@ -65,6 +65,10 @@
                                             <li><a href="namespaces/data-exceptions.html"><abbr title="\Data\Exceptions">Exceptions</abbr></a></li>
                                             <li><a href="namespaces/data-string.html"><abbr title="\Data\String">String</abbr></a></li>
                                     </ul>
+                            <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/httpserver.html"><abbr title="\HttpServer">HttpServer</abbr></a></h4>
+                <ul class="phpdocumentor-list">
+                                            <li><a href="namespaces/httpserver-exceptions.html"><abbr title="\HttpServer\Exceptions">Exceptions</abbr></a></li>
+                                    </ul>
                             <h4 class="phpdocumentor-sidebar__root-namespace"><a href="namespaces/io.html"><abbr title="\IO">IO</abbr></a></h4>
                 <ul class="phpdocumentor-list">
                                     </ul>
@@ -86,6 +90,7 @@
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Data.html"><abbr title="\Data">Data</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="packages/Data-Exceptions.html"><abbr title="\Data\Exceptions">Exceptions</abbr></a></li>
+                                    <li><a href="packages/Data-String.html"><abbr title="\Data\String">String</abbr></a></li>
                             </ul>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/BackgroundColors.html"><abbr title="\BackgroundColors">BackgroundColors</abbr></a></h3>
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/ColoredString.html"><abbr title="\ColoredString">ColoredString</abbr></a></h3>
@@ -94,6 +99,10 @@
                                 <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Threading.html"><abbr title="\Threading">Threading</abbr></a></h3>
                         <ul class="phpdocumentor-list">
                                     <li><a href="packages/Threading-Exceptions.html"><abbr title="\Threading\Exceptions">Exceptions</abbr></a></li>
+                            </ul>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/HttpServer.html"><abbr title="\HttpServer">HttpServer</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/HttpServer-Exceptions.html"><abbr title="\HttpServer\Exceptions">Exceptions</abbr></a></li>
                             </ul>
                         </section>
     
@@ -138,7 +147,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
             <p class="phpdocumentor-summary">Creates customized menu</p>
@@ -250,6 +259,48 @@
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemDelimiterBackgroundColor">$selectedItemDelimiterBackgroundColor</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemDelimiterForegroundColor">$selectedItemDelimiterForegroundColor</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemHeaderBackgroundColor">$selectedItemHeaderBackgroundColor</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemHeaderForegroundColor">$selectedItemHeaderForegroundColor</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemRowBackgroundColor">$selectedItemRowBackgroundColor</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemRowForegroundColor">$selectedItemRowForegroundColor</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CliForms-ListBox-ListBox.html#property_title">$title</a>
     <span>
                 &nbsp;: string            </span>
@@ -341,11 +392,25 @@
 <dd>Builds and renders your menu and runs read-line to select menu item and returns callback</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#method_ResultOutput">ResultOutput()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Prints callback output of selected and called MenuBoxItem. It&#039;s recommended to use instead of Console::Write, because this method saves output after selecting another item.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#method_ResultOutputLine">ResultOutputLine()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd>Prints callback output of selected and called MenuBoxItem and moves caret to new line. It&#039;s recommended to use instead of Console::WriteLine, because this method saves output after selecting another item.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CliForms-MenuBox-MenuBox.html#method_SetClearWindowOnRender">SetClearWindowOnRender()</a>
     <span>
                         &nbsp;: <a href="classes/CliForms-MenuBox-MenuBox.html"><abbr title="\CliForms\MenuBox\MenuBox">MenuBox</abbr></a>    </span>
 </dt>
-<dd>Menu will be cleared after every render</dd>
+<dd>Menu will be cleared after every render. Always TRUE if type of MenuBox is KeyPressType</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CliForms-ListBox-ListBox.html#method_SetDefaultItemStyle">SetDefaultItemStyle()</a>
@@ -411,6 +476,13 @@
 <dd>Sets header type for items</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CliForms-MenuBox-MenuBox.html#method_SetSelectedItemStyle">SetSelectedItemStyle()</a>
+    <span>
+                        &nbsp;: <a href="classes/CliForms-MenuBox-MenuBox.html"><abbr title="\CliForms\MenuBox\MenuBox">MenuBox</abbr></a>    </span>
+</dt>
+<dd>Sets style for selected item</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CliForms-ListBox-ListBox.html#method_SetTitleColor">SetTitleColor()</a>
     <span>
                         &nbsp;: <a href="classes/CliForms-ListBox-ListBox.html"><abbr title="\CliForms\ListBox\ListBox">ListBox</abbr></a>    </span>
@@ -439,7 +511,7 @@
 <dd>Sets zero item to your menu</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CliForms-MenuBox-MenuBox.html#method__renderBody">_renderBody()</a>
+    <a href="classes/CliForms-ListBox-ListBox.html#method__renderBody">_renderBody()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -480,7 +552,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -510,7 +582,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -540,7 +612,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -570,7 +642,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -600,7 +672,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -630,7 +702,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -660,7 +732,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -690,7 +762,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -720,7 +792,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -750,7 +822,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -780,7 +852,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
     
@@ -811,7 +883,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
     
@@ -841,7 +913,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
     
@@ -850,6 +922,186 @@
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$rowsHeaderType</span>
      = <span class="phpdocumentor-signature__default-value">CliFormsRowHeaderType::NUMERIC</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_selectedItemDelimiterBackgroundColor">
+        $selectedItemDelimiterBackgroundColor
+        <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemDelimiterBackgroundColor" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$selectedItemDelimiterBackgroundColor</span>
+     = <span class="phpdocumentor-signature__default-value">DataStringBackgroundColors::YELLOW</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_selectedItemDelimiterForegroundColor">
+        $selectedItemDelimiterForegroundColor
+        <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemDelimiterForegroundColor" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$selectedItemDelimiterForegroundColor</span>
+     = <span class="phpdocumentor-signature__default-value">DataStringForegroundColors::GRAY</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_selectedItemHeaderBackgroundColor">
+        $selectedItemHeaderBackgroundColor
+        <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemHeaderBackgroundColor" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$selectedItemHeaderBackgroundColor</span>
+     = <span class="phpdocumentor-signature__default-value">DataStringBackgroundColors::YELLOW</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_selectedItemHeaderForegroundColor">
+        $selectedItemHeaderForegroundColor
+        <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemHeaderForegroundColor" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$selectedItemHeaderForegroundColor</span>
+     = <span class="phpdocumentor-signature__default-value">DataStringForegroundColors::DARK_BLUE</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_selectedItemRowBackgroundColor">
+        $selectedItemRowBackgroundColor
+        <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemRowBackgroundColor" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">35</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$selectedItemRowBackgroundColor</span>
+     = <span class="phpdocumentor-signature__default-value">DataStringBackgroundColors::YELLOW</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_selectedItemRowForegroundColor">
+        $selectedItemRowForegroundColor
+        <a href="classes/CliForms-MenuBox-MenuBox.html#property_selectedItemRowForegroundColor" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$selectedItemRowForegroundColor</span>
+     = <span class="phpdocumentor-signature__default-value">DataStringForegroundColors::DARK_PURPLE</span></code>
 
     
     
@@ -871,7 +1123,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
     
@@ -901,7 +1153,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -931,7 +1183,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -961,7 +1213,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
     
@@ -991,7 +1243,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -1025,14 +1277,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">MenuBox constructor.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mythis</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$title</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mythis</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CliForms-MenuBox-MenuBoxTypes.html"><abbr title="\CliForms\MenuBox\MenuBoxTypes">MenuBoxTypes</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$menuBoxType</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">MenuBoxTypes::InputItemNumberType</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1056,9 +1308,32 @@
 </section>
 
             </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$menuBoxType</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CliForms-MenuBox-MenuBoxTypes.html"><abbr title="\CliForms\MenuBox\MenuBoxTypes">MenuBoxTypes</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">MenuBoxTypes::InputItemNumberType</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CliForms-Exceptions-InvalidMenuBoxTypeException.html"><abbr title="\CliForms\Exceptions\InvalidMenuBoxTypeException">InvalidMenuBoxTypeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -1080,7 +1355,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add item to collection</p>
@@ -1140,7 +1415,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
         <p class="phpdocumentor-summary">Clears items</p>
@@ -1174,7 +1449,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 </aside>
 
         <p class="phpdocumentor-summary">Closes menu</p>
@@ -1208,7 +1483,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns your object which you passed in constructor</p>
@@ -1242,7 +1517,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns TRUE if menu closed</p>
@@ -1276,7 +1551,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">499</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds and renders your menu and runs read-line to select menu item</p>
@@ -1289,6 +1564,21 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CliForms-Exceptions-NoItemsAddedException.html"><abbr title="\CliForms\Exceptions\NoItemsAddedException">NoItemsAddedException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
@@ -1310,7 +1600,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">400</span>
+    <span class="phpdocumentor-element-found-in__line">640</span>
 </aside>
 
         <p class="phpdocumentor-summary">Builds and renders your menu and runs read-line to select menu item and returns callback</p>
@@ -1325,9 +1615,146 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CliForms-Exceptions-NoItemsAddedException.html"><abbr title="\CliForms\Exceptions\NoItemsAddedException">NoItemsAddedException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">callable|null</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_ResultOutput">
+        ResultOutput()
+        <a href="classes/CliForms-MenuBox-MenuBox.html#method_ResultOutput" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">199</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Prints callback output of selected and called MenuBoxItem. It&#039;s recommended to use instead of Console::Write, because this method saves output after selecting another item.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">ResultOutput</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$foregroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$backgroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$text</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$foregroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$backgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_ResultOutputLine">
+        ResultOutputLine()
+        <a href="classes/CliForms-MenuBox-MenuBox.html#method_ResultOutputLine" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">212</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Prints callback output of selected and called MenuBoxItem and moves caret to new line. It&#039;s recommended to use instead of Console::WriteLine, because this method saves output after selecting another item.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">ResultOutputLine</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$text</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$foregroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$backgroundColor</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$text</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$foregroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">ForegroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$backgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">BackgroundColors::AUTO</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -1346,10 +1773,10 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Menu will be cleared after every render</p>
+        <p class="phpdocumentor-summary">Menu will be cleared after every render. Always TRUE if type of MenuBox is KeyPressType</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1391,7 +1818,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets default style for all items. You can set custom style for any title</p>
@@ -1460,7 +1887,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets description for your menu, which will be displayed between title and items</p>
@@ -1505,7 +1932,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">217</span>
+    <span class="phpdocumentor-element-found-in__line">282</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets style for description</p>
@@ -1558,7 +1985,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">158</span>
+    <span class="phpdocumentor-element-found-in__line">223</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets title for read line input</p>
@@ -1603,7 +2030,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">253</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets style for delimiter of read line</p>
@@ -1656,7 +2083,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets style for read line title</p>
@@ -1709,7 +2136,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets delimiter between header and item (for example: &quot;. &quot;)</p>
@@ -1754,7 +2181,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets style for delimiter between header and item</p>
@@ -1807,7 +2234,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">107</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets header type for items</p>
@@ -1860,6 +2287,91 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_SetSelectedItemStyle">
+        SetSelectedItemStyle()
+        <a href="classes/CliForms-MenuBox-MenuBox.html#method_SetSelectedItemStyle" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">332</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Sets style for selected item</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">SetSelectedItemStyle</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$headerForegroundColor</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$headerBackgroundColor</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$delimiterForegroundColor</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$delimiterBackgroundColor</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$itemForegroundColor</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$itemBackgroundColor</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CliForms-MenuBox-MenuBox.html"><abbr title="\CliForms\MenuBox\MenuBox">MenuBox</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$headerForegroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$headerBackgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$delimiterForegroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$delimiterBackgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$itemForegroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-ForegroundColors.html"><abbr title="\Data\String\ForegroundColors">ForegroundColors</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$itemBackgroundColor</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Data-String-BackgroundColors.html"><abbr title="\Data\String\BackgroundColors">BackgroundColors</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CliForms-MenuBox-MenuBox.html"><abbr title="\CliForms\MenuBox\MenuBox">MenuBox</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_SetTitleColor">
         SetTitleColor()
         <a href="classes/CliForms-ListBox-ListBox.html#method_SetTitleColor" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1867,7 +2379,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set color of title. Use ForegroundColors and BackgroundColors enums</p>
@@ -1920,7 +2432,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">233</span>
+    <span class="phpdocumentor-element-found-in__line">298</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets title which will be displayed if user selects a non-exists item</p>
@@ -1965,7 +2477,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">311</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets style for a non-exists item title</p>
@@ -2018,7 +2530,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 </aside>
 
         <p class="phpdocumentor-summary">Sets zero item to your menu</p>
@@ -2058,12 +2570,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method__renderBody">
         _renderBody()
-        <a href="classes/CliForms-MenuBox-MenuBox.html#method__renderBody" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CliForms-ListBox-ListBox.html#method__renderBody" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/MenuBox/MenuBox.php"><a href="files/cliforms-menubox-menubox.html"><abbr title="CliForms/MenuBox/MenuBox.php">MenuBox.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 </aside>
 
     
@@ -2105,7 +2617,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="CliForms/ListBox/ListBox.php"><a href="files/cliforms-listbox-listbox.html"><abbr title="CliForms/ListBox/ListBox.php">ListBox.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 </aside>
 
     
