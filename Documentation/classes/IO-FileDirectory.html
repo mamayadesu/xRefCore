@@ -172,7 +172,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/IO-FileDirectory.html#method_Delete">Delete()</a>
     <span>
-                        &nbsp;: void    </span>
+                        &nbsp;: bool    </span>
 </dt>
 <dd>Deletes file or directory (even if directory is not empty)</dd>
 
@@ -257,14 +257,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="IO/FileDirectory.php"><a href="files/io-filedirectory.html"><abbr title="IO/FileDirectory.php">FileDirectory.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Deletes file or directory (even if directory is not empty)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">Delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">Delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -275,7 +275,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Path to target</p>
+                    <section class="phpdocumentor-description"><p>Path to target file or directory</p>
 </section>
 
             </dd>
@@ -284,9 +284,10 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">void</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
+            <section class="phpdocumentor-description"><p>Returns TRUE if target was deleted successfully. Returns FALSE if an error occurred.</p>
+</section>
 
     
 </article>
