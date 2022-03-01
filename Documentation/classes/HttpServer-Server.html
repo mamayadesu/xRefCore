@@ -142,7 +142,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="HttpServer/Server.php"><a href="files/httpserver-server.html"><abbr title="HttpServer/Server.php">Server.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 </aside>
 
             <p class="phpdocumentor-summary">HTTP-server</p>
@@ -217,7 +217,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="HttpServer/Server.php"><a href="files/httpserver-server.html"><abbr title="HttpServer/Server.php">Server.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
         <p class="phpdocumentor-summary">Server constructor.</p>
@@ -272,7 +272,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="HttpServer/Server.php"><a href="files/httpserver-server.html"><abbr title="HttpServer/Server.php">Server.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
         <p class="phpdocumentor-summary">Add new event</p>
@@ -283,9 +283,12 @@
 
         <section class="phpdocumentor-description"><p>Supported events:</p>
 <ul>
-<li>start - calls when server was started</li>
-<li>shutdown - calls when server was shutdown</li>
-<li>request - calls when request was received</li>
+<li>start - calls when server was started. Callback has argument <code class="prettyprint">\HttpServer\Server</code>
+</li>
+<li>shutdown - calls when server was shutdown. Callback has argument <code class="prettyprint">\HttpServer\Server</code>
+</li>
+<li>request - calls when request was received. Callback has arguments <code class="prettyprint">\HttpServer\Request</code> and <code class="prettyprint">\HttpServer\Response</code>
+</li>
 </ul>
 </section>
 
@@ -331,7 +334,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="HttpServer/Server.php"><a href="files/httpserver-server.html"><abbr title="HttpServer/Server.php">Server.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">199</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 </aside>
 
         <p class="phpdocumentor-summary">Shutdown server</p>
@@ -365,7 +368,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="HttpServer/Server.php"><a href="files/httpserver-server.html"><abbr title="HttpServer/Server.php">Server.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 </aside>
 
         <p class="phpdocumentor-summary">Run server</p>

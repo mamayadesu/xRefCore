@@ -161,6 +161,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Application-Application.html#method_AmIRunningAsSuperuser">AmIRunningAsSuperuser()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Returns TRUE if your application started with Administrator&#039;s permissions.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Application-Application.html#method_GetAuthor">GetAuthor()</a>
     <span>
                         &nbsp;: string    </span>
@@ -193,7 +200,14 @@
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Returns a framework version</dd>
+<dd>Returns a xRefCore version</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Application-Application.html#method_GetHomeDirectory">GetHomeDirectory()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Returns a home directory of current user (in Windows is C:\Users\your_username, in *unix systems is /home/your_username or /root)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Application-Application.html#method_GetName">GetName()</a>
@@ -208,6 +222,13 @@
                         &nbsp;: string    </span>
 </dt>
 <dd>Returns required PHP version</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Application-Application.html#method_GetUsername">GetUsername()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Returns a current username</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Application-Application.html#method_GetVersion">GetVersion()</a>
@@ -243,6 +264,40 @@
             Methods
             <a href="classes/Application-Application.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_AmIRunningAsSuperuser">
+        AmIRunningAsSuperuser()
+        <a href="classes/Application-Application.html#method_AmIRunningAsSuperuser" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Application/Application.php"><a href="files/application-application.html"><abbr title="Application/Application.php">Application.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">149</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns TRUE if your application started with Administrator&#039;s permissions.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">AmIRunningAsSuperuser</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
                     <article
         class="phpdocumentor-element
             -method
@@ -399,7 +454,7 @@
     <span class="phpdocumentor-element-found-in__line">90</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Returns a framework version</p>
+        <p class="phpdocumentor-summary">Returns a xRefCore version</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -415,6 +470,40 @@
             &mdash;
             <section class="phpdocumentor-description"><p>Framework version</p>
 </section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_GetHomeDirectory">
+        GetHomeDirectory()
+        <a href="classes/Application-Application.html#method_GetHomeDirectory" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Application/Application.php"><a href="files/application-application.html"><abbr title="Application/Application.php">Application.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">135</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a home directory of current user (in Windows is C:\Users\your_username, in *unix systems is /home/your_username or /root)</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">GetHomeDirectory</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
 
     
 </article>
@@ -494,6 +583,40 @@
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_GetUsername">
+        GetUsername()
+        <a href="classes/Application-Application.html#method_GetUsername" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Application/Application.php"><a href="files/application-application.html"><abbr title="Application/Application.php">Application.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">121</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returns a current username</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">GetUsername</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_GetVersion">
         GetVersion()
         <a href="classes/Application-Application.html#method_GetVersion" class="headerlink"><i class="fas fa-link"></i></a>
@@ -536,7 +659,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="Application/Application.php"><a href="files/application-application.html"><abbr title="Application/Application.php">Application.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
         <p class="phpdocumentor-summary">Parses arguments to values with keys, free-key values and uninitialized keys</p>
@@ -572,7 +695,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If true, skips first element of $args</p>
+                    <section class="phpdocumentor-description"><p>If true, skips the first element of $args. Usually the first element is path to your application</p>
 </section>
 
             </dd>

@@ -43,13 +43,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Application\\Application\u003A\u003AGetFrameworkVersion\u0028\u0029",
             "name": "GetFrameworkVersion",
-            "summary": "Returns\u0020a\u0020framework\u0020version",
+            "summary": "Returns\u0020a\u0020xRefCore\u0020version",
             "url": "classes/Application-Application.html#method_GetFrameworkVersion"
         },                {
             "fqsen": "\\Application\\Application\u003A\u003ASetTitle\u0028\u0029",
             "name": "SetTitle",
             "summary": "Sets\u0020title\u0020of\u0020process\u0020\u0028In\u0020Windows\u0020\u002D\u0020title\u0020of\u0020window\u0029",
             "url": "classes/Application-Application.html#method_SetTitle"
+        },                {
+            "fqsen": "\\Application\\Application\u003A\u003AGetUsername\u0028\u0029",
+            "name": "GetUsername",
+            "summary": "Returns\u0020a\u0020current\u0020username",
+            "url": "classes/Application-Application.html#method_GetUsername"
+        },                {
+            "fqsen": "\\Application\\Application\u003A\u003AGetHomeDirectory\u0028\u0029",
+            "name": "GetHomeDirectory",
+            "summary": "Returns\u0020a\u0020home\u0020directory\u0020of\u0020current\u0020user\u0020\u0028in\u0020Windows\u0020is\u0020C\u003A\\Users\\your_username,\u0020in\u0020\u002Aunix\u0020systems\u0020is\u0020\/home\/your_username\u0020or\u0020\/root\u0029",
+            "url": "classes/Application-Application.html#method_GetHomeDirectory"
+        },                {
+            "fqsen": "\\Application\\Application\u003A\u003AAmIRunningAsSuperuser\u0028\u0029",
+            "name": "AmIRunningAsSuperuser",
+            "summary": "Returns\u0020TRUE\u0020if\u0020your\u0020application\u0020started\u0020with\u0020Administrator\u0027s\u0020permissions.",
+            "url": "classes/Application-Application.html#method_AmIRunningAsSuperuser"
         },                {
             "fqsen": "\\Application\\Application\u003A\u003AParseArguments\u0028\u0029",
             "name": "ParseArguments",
@@ -1201,10 +1216,60 @@ Search.appendIndex(
             "summary": "Returns\u0020body\u0020of\u0020request",
             "url": "classes/HttpServer-Request.html#method_GetRawContent"
         },                {
-            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024Server",
-            "name": "Server",
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RequestMethod",
+            "name": "RequestMethod",
             "summary": "",
-            "url": "classes/HttpServer-Request.html#property_Server"
+            "url": "classes/HttpServer-Request.html#property_RequestMethod"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RequestUri",
+            "name": "RequestUri",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_RequestUri"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024QueryString",
+            "name": "QueryString",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_QueryString"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024PathInfo",
+            "name": "PathInfo",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_PathInfo"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024ServerProtocol",
+            "name": "ServerProtocol",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_ServerProtocol"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RemoteAddress",
+            "name": "RemoteAddress",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_RemoteAddress"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RequestTime",
+            "name": "RequestTime",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_RequestTime"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024ServerPort",
+            "name": "ServerPort",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_ServerPort"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RemotePort",
+            "name": "RemotePort",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_RemotePort"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024MasterTime",
+            "name": "MasterTime",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_MasterTime"
+        },                {
+            "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RequestTimeFloat",
+            "name": "RequestTimeFloat",
+            "summary": "",
+            "url": "classes/HttpServer-Request.html#property_RequestTimeFloat"
         },                {
             "fqsen": "\\HttpServer\\Request\u003A\u003A\u0024RequestError",
             "name": "RequestError",
@@ -1236,6 +1301,11 @@ Search.appendIndex(
             "summary": "Sets\u0020response\u0020for\u0020client\u0020and\u0020closes\u0020connection",
             "url": "classes/HttpServer-Response.html#method_End"
         },                {
+            "fqsen": "\\HttpServer\\Response\u003A\u003AGetFullResponse\u0028\u0029",
+            "name": "GetFullResponse",
+            "summary": "Returns\u0020full\u0020response\u0020with\u0020all\u0020headers",
+            "url": "classes/HttpServer-Response.html#method_GetFullResponse"
+        },                {
             "fqsen": "\\HttpServer\\Server",
             "name": "Server",
             "summary": "HTTP\u002Dserver",
@@ -1260,6 +1330,11 @@ Search.appendIndex(
             "name": "Shutdown",
             "summary": "Shutdown\u0020server",
             "url": "classes/HttpServer-Server.html#method_Shutdown"
+        },                {
+            "fqsen": "\\HttpServer\\Exceptions\\UnknownEventException",
+            "name": "UnknownEventException",
+            "summary": "",
+            "url": "classes/HttpServer-Exceptions-UnknownEventException.html"
         },                {
             "fqsen": "\\",
             "name": "\\",
