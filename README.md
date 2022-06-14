@@ -17,6 +17,5 @@ https://github.com/mamayadesu/xRefCoreCompiler/wiki/Installation-&-Usage
 <h2>API</h2>
 http://xrefcore.ru
 
-<h2>Examples</h2>
-https://github.com/mamayadesu/xRefCore_ThreadExample<br>
-https://github.com/mamayadesu/xRefCore_MenuExample
+<h2>Usage examples</h2>
+https://github.com/mamayadesu/xRefCore/wiki/xRefCore-Examples
