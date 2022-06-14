@@ -10,6 +10,7 @@ This framework will simplify a creation of PHP console applicaions with OOP usin
 * Improved input-reading tools<br>
 * Pseudo GUI tools<br>
 * Build-in HTTP-server<br>
+* Simple tools for colored CLI<br>
 
 <h2>How to use</h2>
 https://github.com/mamayadesu/xRefCoreCompiler/wiki/Installation-&-Usage
